@@ -4,6 +4,26 @@
     <string name="app_name">WeMake</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <!-- String From RegisterActivity -->
     <string name="title_activity_register">RegisterActivity</string>
+    <string name="name_label">Nombre</string>
+    <string name="name_hint_label">Nombre Completo</string>
+    <string name="age_label">Edad</string>
+    <string name="age_hint_label">Ingrese Edad</string>
+    <string name="phone_label">Telefono</string>
+    <string name="phone_hint_label">Telefono/Celular</string>
+    <string name="email_label">Email</string>
+    <string name="email_hint_label">Ingrese Email</string>
+    <string name="state_label">Departamento</string>
+    <string name="state_hint_label">Ingrese Depto</string>
+    <string name="city_label">Municipio</string>
+    <string name="city_hint_label">Ingrese Municipio</string>
+    <string name="neighborhood_label">Barrio</string>
+    <string name="neighborhood_hint_label">Ingrese Barrio</string>
+    <string name="profession_label">Profesion</string>
+    <string name="profession_hint_label">Profesion</string>
+        <string name="skills_label">_Habilidades</string>
+    <string name="skills_hint_label">Habilidades</string>
 
 </resources>

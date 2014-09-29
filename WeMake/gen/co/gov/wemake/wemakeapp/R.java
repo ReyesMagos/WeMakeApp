@@ -25,11 +25,23 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080000;
+        public static final int LinearLayout1=0x7f080000;
+        public static final int ac_profession=0x7f08000a;
+        public static final int action_settings=0x7f08000b;
+        public static final int lbl_age=0x7f080003;
+        public static final int lbl_email=0x7f080005;
+        public static final int lbl_name=0x7f080001;
+        public static final int lbl_phone=0x7f080007;
+        public static final int lbl_profession=0x7f080009;
+        public static final int txt_age=0x7f080004;
+        public static final int txt_email=0x7f080006;
+        public static final int txt_name=0x7f080002;
+        public static final int txt_phone=0x7f080008;
     }
     public static final class layout {
         public static final int activity_login=0x7f030000;
         public static final int activity_register=0x7f030001;
+        public static final int activity_register_part_two=0x7f030002;
     }
     public static final class menu {
         public static final int login=0x7f070000;
@@ -37,8 +49,28 @@ public final class R {
     }
     public static final class string {
         public static final int action_settings=0x7f050002;
+        public static final int age_hint_label=0x7f050007;
+        public static final int age_label=0x7f050006;
         public static final int app_name=0x7f050000;
+        public static final int city_hint_label=0x7f05000f;
+        public static final int city_label=0x7f05000e;
+        public static final int email_hint_label=0x7f05000b;
+        public static final int email_label=0x7f05000a;
         public static final int hello_world=0x7f050001;
+        public static final int name_hint_label=0x7f050005;
+        public static final int name_label=0x7f050004;
+        public static final int neighborhood_hint_label=0x7f050011;
+        public static final int neighborhood_label=0x7f050010;
+        public static final int phone_hint_label=0x7f050009;
+        public static final int phone_label=0x7f050008;
+        public static final int profession_hint_label=0x7f050013;
+        public static final int profession_label=0x7f050012;
+        public static final int skills_hint_label=0x7f050015;
+        public static final int skills_label=0x7f050014;
+        public static final int state_hint_label=0x7f05000d;
+        public static final int state_label=0x7f05000c;
+        /**  String From RegisterActivity 
+         */
         public static final int title_activity_register=0x7f050003;
     }
     public static final class style {

@@ -8,13 +8,37 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AutoCompleteTextView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class RegisterActivity extends Activity {
+
+	private TextView txtName;
+	private TextView txtAge;
+	private TextView txtEmail;
+	private TextView txtPhone;
+	private AutoCompleteTextView acProfession;
+	private ImageView btnNext;
+	private AutoCompleteTextView acState;
+	private AutoCompleteTextView acCity;
+	private AutoCompleteTextView acNeighborhood;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_register);
+	}
+
+	private void init() {
+		txtName = (TextView) findViewById(R.id.txt_name);
+		txtAge = (TextView) findViewById(R.id.txt_age);
+		txtEmail = (TextView) findViewById(R.id.txt_age);
+		txtPhone = (TextView) findViewById(R.id.txt_phone);
+		acProfession = (AutoCompleteTextView) findViewById(R.id.ac_profession);
+		acState = (AutoCompleteTextView) findViewById(R.id.ac_state);
+		
+
 	}
 
 	@Override

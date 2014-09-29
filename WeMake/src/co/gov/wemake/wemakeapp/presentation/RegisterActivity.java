@@ -1,5 +1,9 @@
-package co.gov.wemake.wemakeapp;
+package co.gov.wemake.wemakeapp.presentation;
 
+import co.gov.wemake.wemakeapp.R;
+import co.gov.wemake.wemakeapp.R.id;
+import co.gov.wemake.wemakeapp.R.layout;
+import co.gov.wemake.wemakeapp.R.menu;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;

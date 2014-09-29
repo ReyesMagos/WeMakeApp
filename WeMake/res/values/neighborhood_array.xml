@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="neighborhood_array">
+        <item>Barrio Colon</item>
+        <item>Berlin</item>
+        <item>Bemejal los Alamos</item>
+        <item>Bombona N1</item>
+        <item>Boston</item>
+        <item>Brasilia</item>
+        <item>Calle Nueva</item>
+        <item>Campo Valdes N1</item>
+        <item>Corazon de Jesus</item>
+        <item>El Chagualo</item>
+        <item>Estacion Villa</item>
+        <item>Guayaquil</item>
+        <item>Jesus Nazareno</item>
+        <item>La Candelaria</item>
+        <item>La Pinuela</item>
+        <item>Las Esmeraldas</item>
+        <item>Las Palmas</item>
+        <item>Los Angeles</item>
+        <item>Manrique Central N1</item>
+        <item>Miranda</item>
+        <item>Moravia</item>
+        <item>Palermo</item>
+        <item>Perpetuo Socorro</item>
+        <item>Prado</item>
+        <item>San Benito</item>
+        <item>San Diego</item>
+        <item>San Isidro</item>
+        <item>San Pedro</item>
+        <item>Sevilla</item>
+        <item>Villa nueva</item>
+    </string-array>
+
+</resources>

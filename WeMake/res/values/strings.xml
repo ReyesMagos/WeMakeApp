@@ -23,7 +23,7 @@
     <string name="neighborhood_hint_label">Ingrese Barrio</string>
     <string name="profession_label">Profesion</string>
     <string name="profession_hint_label">Profesion</string>
-        <string name="skills_label">_Habilidades</string>
+    <string name="skills_label">_Habilidades</string>
     <string name="skills_hint_label">Habilidades</string>
 
 </resources>

@@ -25,5 +25,9 @@
     <string name="profession_hint_label">Profesion</string>
     <string name="skills_label">_Habilidades</string>
     <string name="skills_hint_label">Habilidades</string>
+    
+    <!-- String for Login Activity -->
+    <string name="user_hint_text">Usuario</string>
+    <string name="password_hint_text">Contraseña</string>
 
 </resources>

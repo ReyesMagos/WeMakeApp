@@ -44,6 +44,8 @@ public class RegisterActivity extends Activity {
 		acSkills = (AutoCompleteTextView) findViewById(R.id.ac_skills);
 
 	}
+	
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

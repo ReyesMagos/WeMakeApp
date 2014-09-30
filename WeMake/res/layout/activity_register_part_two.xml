@@ -77,4 +77,27 @@
         </AutoCompleteTextView>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/lbl_skills"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/skills_label" />
+
+        <AutoCompleteTextView
+            android:id="@+id/ac_skills"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/skills_hint_label" >
+
+            <requestFocus />
+        </AutoCompleteTextView>
+    </LinearLayout>
+
 </LinearLayout>

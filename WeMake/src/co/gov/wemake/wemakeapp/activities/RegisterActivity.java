@@ -23,11 +23,13 @@ public class RegisterActivity extends Activity {
 	private AutoCompleteTextView acState;
 	private AutoCompleteTextView acCity;
 	private AutoCompleteTextView acNeighborhood;
+	private AutoCompleteTextView acSkills;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_register);
+		init();
 	}
 
 	private void init() {
@@ -37,7 +39,9 @@ public class RegisterActivity extends Activity {
 		txtPhone = (TextView) findViewById(R.id.txt_phone);
 		acProfession = (AutoCompleteTextView) findViewById(R.id.ac_profession);
 		acState = (AutoCompleteTextView) findViewById(R.id.ac_state);
-		
+		acCity = (AutoCompleteTextView) findViewById(R.id.ac_city);
+		acNeighborhood = (AutoCompleteTextView) findViewById(R.id.ac_neighborhood);
+		acSkills = (AutoCompleteTextView) findViewById(R.id.ac_skills);
 
 	}
 

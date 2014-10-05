@@ -35,8 +35,7 @@ public class RegisterActivity extends Activity {
 	}
 
 	/**
-	 * En este metodo se inicializan los componentes del primer layout del
-	 * registro, en el se encontrara el nombre, la edad, el email y el telefono
+	 * this method is for initialize the first layout components.
 	 */
 	private void initLayoutOneComponents() {
 		txtName = (TextView) findViewById(R.id.txt_name);
@@ -48,8 +47,7 @@ public class RegisterActivity extends Activity {
 	}
 
 	/**
-	 * En este metodo se inicializan los componentes del segundo layout del
-	 * registro, en el se encontrarala profesion y la habilidad
+	 * this method is for initialize the second layout components.
 	 */
 	private void initLayoutTwoComponents() {
 		btnNextSecondLayout = (ImageView) findViewById(R.id.btn_next_second_layout);
@@ -59,9 +57,7 @@ public class RegisterActivity extends Activity {
 	}
 
 	/**
-	 * En este metodo se inicializan los componentes del tercer layout del
-	 * registro, en el se encontrara el departamento, el municipio y el barrio
-	 * para el caso de la ciudad de medellin
+	 * this method is for initialize the third layout components.
 	 */
 	private void initLayoutThreeComponents() {
 		acState = (AutoCompleteTextView) findViewById(R.id.ac_state);

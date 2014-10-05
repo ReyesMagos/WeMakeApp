@@ -19,7 +19,9 @@ public class RegisterActivity extends Activity {
 	private TextView txtEmail;
 	private TextView txtPhone;
 	private AutoCompleteTextView acProfession;
-	private ImageView btnNext;
+	private ImageView btnNextFirstLayout;
+	private ImageView btnNextSecondLayout;
+	private ImageView btnNextThirdLayout;
 	private AutoCompleteTextView acState;
 	private AutoCompleteTextView acCity;
 	private AutoCompleteTextView acNeighborhood;
@@ -35,21 +37,25 @@ public class RegisterActivity extends Activity {
 	private void initLayoutOneComponents() {
 		txtName = (TextView) findViewById(R.id.txt_name);
 		txtAge = (TextView) findViewById(R.id.txt_age);
-		txtEmail = (TextView) findViewById(R.id.txt_age);
+		txtEmail = (TextView) findViewById(R.id.txt_email);
 		txtPhone = (TextView) findViewById(R.id.txt_phone);
-		
+		btnNextFirstLayout = (ImageView) findViewById(R.id.btn_next_first_layout);
+
 	}
-	
-	private void initLayoutTwoComponents(){
+
+	private void initLayoutTwoComponents() {
+		btnNextSecondLayout = (ImageView) findViewById(R.id.btn_next_second_layout);
 		acProfession = (AutoCompleteTextView) findViewById(R.id.ac_profession);
-		acState = (AutoCompleteTextView) findViewById(R.id.ac_state);
-		acCity = (AutoCompleteTextView) findViewById(R.id.ac_city);
-		acNeighborhood = (AutoCompleteTextView) findViewById(R.id.ac_neighborhood);
 		acSkills = (AutoCompleteTextView) findViewById(R.id.ac_skills);
 
 	}
-	
-	
+
+	private void initLayoutThreeComponents() {
+		acState = (AutoCompleteTextView) findViewById(R.id.ac_state);
+		acCity = (AutoCompleteTextView) findViewById(R.id.ac_city);
+		acNeighborhood = (AutoCompleteTextView) findViewById(R.id.ac_neighborhood);
+		btnNextThirdLayout = (ImageView) findViewById(R.id.btn_next_third_layout);
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

@@ -13,6 +13,29 @@
         android:layout_height="wrap_content" >
 
         <TextView
+            android:id="@+id/lbl_profession"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/profession_label" />
+
+        <AutoCompleteTextView
+            android:id="@+id/ac_profession"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/profession_hint_label" >
+
+            <requestFocus />
+        </AutoCompleteTextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
             android:id="@+id/lbl_state"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

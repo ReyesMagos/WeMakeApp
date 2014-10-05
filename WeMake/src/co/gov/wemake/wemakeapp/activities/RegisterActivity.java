@@ -29,14 +29,18 @@ public class RegisterActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_register);
-		init();
+		initLayoutOneComponents();
 	}
 
-	private void init() {
+	private void initLayoutOneComponents() {
 		txtName = (TextView) findViewById(R.id.txt_name);
 		txtAge = (TextView) findViewById(R.id.txt_age);
 		txtEmail = (TextView) findViewById(R.id.txt_age);
 		txtPhone = (TextView) findViewById(R.id.txt_phone);
+		
+	}
+	
+	private void initLayoutTwoComponents(){
 		acProfession = (AutoCompleteTextView) findViewById(R.id.ac_profession);
 		acState = (AutoCompleteTextView) findViewById(R.id.ac_state);
 		acCity = (AutoCompleteTextView) findViewById(R.id.ac_city);

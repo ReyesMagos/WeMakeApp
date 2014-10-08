@@ -20,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
+        android:completionThreshold="1"
         android:ems="10"
         android:gravity="center"
         android:hint="@string/state_hint_label" >
@@ -39,6 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
+        android:completionThreshold="1"
         android:ems="10"
         android:hint="@string/city_hint_label" >
 
@@ -57,12 +59,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
+        android:completionThreshold="1"
         android:ems="10"
         android:hint="@string/neighborhood_hint_label" >
 
         <requestFocus />
     </AutoCompleteTextView>
-    
+
     <ImageView
         android:id="@+id/btn_next_third_layout"
         android:layout_width="wrap_content"

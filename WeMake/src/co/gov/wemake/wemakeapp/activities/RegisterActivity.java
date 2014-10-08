@@ -6,13 +6,19 @@ import co.gov.wemake.wemakeapp.R.layout;
 import co.gov.wemake.wemakeapp.R.menu;
 import co.gov.wemake.wemakeapp.controller.RegisterController;
 import android.app.Activity;
+import android.media.audiofx.AcousticEchoCanceler;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class RegisterActivity extends Activity {
 
@@ -30,6 +36,8 @@ public class RegisterActivity extends Activity {
 	private AutoCompleteTextView acNeighborhood;
 	private AutoCompleteTextView acSkills;
 	private RegisterController registerController;
+	private ArrayAdapter<String> acProfessionsAdapter;
+	private ArrayAdapter<String> acSkillsAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +75,42 @@ public class RegisterActivity extends Activity {
 		btnNextSecondLayout = (ImageView) findViewById(R.id.btn_next_second_layout);
 		acProfession = (AutoCompleteTextView) findViewById(R.id.ac_profession);
 		acSkills = (AutoCompleteTextView) findViewById(R.id.ac_skills);
+
+		acProfessionsAdapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1,
+				registerController.getProfessionArray());
+
+		acSkillsAdapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1,
+				registerController.getSkillsArray());
+
+		acProfession.setAdapter(acProfessionsAdapter);
+		acSkills.setAdapter(acSkillsAdapter);
+
+		acProfession.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> adapter, View arg1,
+					int position, long arg3) {
+				// TODO Auto-generated method stub
+
+				Toast.makeText(getApplicationContext(),
+						adapter.getAdapter().getItem(position).toString(),
+						Toast.LENGTH_LONG).show();
+			}
+		});
+
+		acSkills.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> adapter, View arg1,
+					int position, long arg3) {
+				// TODO Auto-generated method stub
+				Toast.makeText(getApplicationContext(),
+						adapter.getAdapter().getItem(position).toString(),
+						Toast.LENGTH_LONG).show();
+			}
+		});
 
 	}
 

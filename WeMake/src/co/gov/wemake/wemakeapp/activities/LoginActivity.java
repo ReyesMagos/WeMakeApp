@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import co.gov.wemake.wemakeapp.R;
+import co.gov.wemake.wemakeapp.controller.LoginController;
 
 import com.parse.Parse;
 
@@ -14,7 +15,7 @@ public class LoginActivity extends Activity {
 
 	private EditText userNameEditText;
 	private EditText passwordEditText;
-
+	private LoginController loginController;
 	private String username;
 	private String password;
 
@@ -26,6 +27,7 @@ public class LoginActivity extends Activity {
 				getString(R.string.parse_id_number),
 				getString(R.string.parse_key_number));
 		createComponents();
+		loginController = new LoginController(this);
 	}
 
 	private void createComponents() {
@@ -58,5 +60,9 @@ public class LoginActivity extends Activity {
 
 	public void onLoginClick(View view) {
 
+	}
+
+	public void singUp(View view) {
+		loginController.changeActivity(RegisterActivity.class);
 	}
 }

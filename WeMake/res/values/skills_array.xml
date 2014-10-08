@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="skills_array">
+        <item>Albañeria</item>
+        <item>Administracion y Gestion</item>
+        <item>Apoyo en General</item>
+        <item>Artesania</item>
+        <item>Atencion a Personas con Movilidad Reducida</item>
+        <item>Atencion a Personas Niños</item>
+        <item>Atencion a Personas Mayores</item>
+        <item>Atencion o Cuidado Animales</item>
+        <item> Carpinteria</item>
+        <item>Clases y Talleres</item>
+        <item>Computadores y Nuevas Tecnologias</item>
+        <item>Cocinar</item>
+        <item>Costura</item>
+        <item>Danza</item>
+        <item>Entretenimiento y Animacion Eventos</item>
+        <item>Fotografia y Video</item>
+        <item>Literatura</item>
+        <item>Idiomas</item>
+        <item>Manualidades</item>
+        <item> Medios Audiovisuales</item>
+        <item>Pequeñas Reparaciones y Plomeria</item>
+        <item>Pintura</item>
+        <item>Psicoorientacion</item>
+        <item >Reciclaje</item>
+        <item>Servicios Medicos/Enfermeria</item>
+        <item> Tareas de Electricidad</item>
+        <item>Teatro</item>
+        <item>Trabajos Jadineria o patio</item>
+        <item>Trabajo Domestico/Limpieza</item>
+        <item ></item>
+    </string-array>
+
+</resources>

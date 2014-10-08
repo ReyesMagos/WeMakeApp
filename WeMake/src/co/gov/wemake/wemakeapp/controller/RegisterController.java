@@ -7,9 +7,38 @@ import android.app.Activity;
 
 public class RegisterController extends AbstractController {
 
+	private String[] professionArray;
+	private String[] skillsArray;
+
 	public RegisterController(Activity activity) {
 		super(activity);
 		// TODO Auto-generated constructor stub
+		initStuff();
+	}
+
+	public void initStuff() {
+		professionArray = getActivity().getResources().getStringArray(
+				R.array.professions_array);
+		skillsArray = getActivity().getResources().getStringArray(
+				R.array.skills_array);
+	}
+	
+	
+
+	public String[] getProfessionArray() {
+		return professionArray;
+	}
+
+	public void setProfessionArray(String[] professionArray) {
+		this.professionArray = professionArray;
+	}
+
+	public String[] getSkillsArray() {
+		return skillsArray;
+	}
+
+	public void setSkillsArray(String[] skillsArray) {
+		this.skillsArray = skillsArray;
 	}
 
 	public void verifyPartOneSingUpData(String name, String lastname,
@@ -312,5 +341,4 @@ public class RegisterController extends AbstractController {
 
 	}
 
-	
 }

@@ -6,26 +6,41 @@
     <string name="action_settings">Settings</string>
 
     <!-- String From RegisterActivity -->
-    <string name="title_activity_register">RegisterActivity</string>
-    <string name="name_label">Nombre</string>
-    <string name="name_hint_label">Nombre Completo</string>
-    <string name="age_label">Edad</string>
+    <string name="title_activity_register">Registro</string>
+    <string name="name_label">Nombre:</string>
+    <string name="name_hint_label">Nombre</string>
+    <string name="last_hint_label">Apellido</string>
+    <string name="age_label">Edad:</string>
     <string name="age_hint_label">Ingrese Edad</string>
     <string name="phone_label">Telefono</string>
     <string name="phone_hint_label">Telefono/Celular</string>
     <string name="email_label">Email</string>
     <string name="email_hint_label">Ingrese Email</string>
-    <string name="state_label">Departamento</string>
-    <string name="state_hint_label">Ingrese Depto</string>
-    <string name="city_label">Municipio</string>
+    <string name="state_label">Departamento:</string>
+    <string name="state_hint_label">Ingrese Departamento</string>
+    <string name="city_label">Municipio:</string>
     <string name="city_hint_label">Ingrese Municipio</string>
-    <string name="neighborhood_label">Barrio</string>
+    <string name="neighborhood_label">Barrio:</string>
     <string name="neighborhood_hint_label">Ingrese Barrio</string>
-    <string name="profession_label">Profesion</string>
+    <string name="profession_label">Profesion:</string>
     <string name="profession_hint_label">Profesion</string>
-    <string name="skills_label">_Habilidades</string>
+    <string name="skills_label">Habilidades:</string>
     <string name="skills_hint_label">Habilidades</string>
-    
+    <string name="alert_label">Alerta</string>
+    <string name="no_name_alert">Error No ingreso Nombre</string>
+    <string name="no_age_alert">Error No ingreso Edad</string>
+    <string name="no_email_alert">Error No ingreso Email</string>
+    <string name="no_lastname_alert">Error no ingreso Apellido</string>
+    <string name="no_phone_alert">Error no ingreso Telefono</string>
+    <string name="name_lenght_error">Error el Nombre debe ser minimo de 4 caracteres</string>
+    <string name="lasname_lenght_error">Error el Apellido debe ser minimo de 5 caracteres</string>
+    <string name="age_lenght_error">Error la Edad debe ser minimo de 2 caracteres </string>
+    <string name="phone_length_error">Error la longitud del Telefono debe ser de 7 a 10 caracteres</string>
+    <string name="age_no_number_error">Error la Edad debe ser numerica</string>
+    <string name="name_format_error">Error el Nombre no puede contener Digitos, Ni espacios</string>
+    <string name="lastname_format_error">Error el Apellido no puede contener Digitos, Ni espacios</string>
+    <string name="email_format_error">Error el Email debe tener el formato texto@texto.com</string>
+    <string name="phone_format_error">Error el telfono debe solo contener caracteres numericos </string>
     <!-- String for Login Activity -->
     <string name="user_hint_text">Usuario</string>
     <string name="password_hint_text">Contraseña</string>

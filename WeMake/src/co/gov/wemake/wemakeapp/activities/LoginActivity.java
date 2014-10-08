@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import co.gov.wemake.wemakeapp.R;
 
@@ -21,12 +22,14 @@ public class LoginActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
+		Parse.initialize(this.getApplicationContext(),
+				getString(R.string.parse_id_number),
+				getString(R.string.parse_key_number));
 		createComponents();
 	}
 
 	private void createComponents() {
-		Parse.initialize(this, "oqPVy34Q3lVwxi56FcVcGDishkY9Wg2JVL7ggBL4",
-				"EbmtfciIe91q9GZWp9jnsrsjKAidqDA5UHBS3dvj");
+
 		this.userNameEditText = (EditText) super
 				.findViewById(R.id.txt_username);
 		this.passwordEditText = (EditText) super
@@ -51,5 +54,9 @@ public class LoginActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	public void onLoginClick(View view) {
+
 	}
 }

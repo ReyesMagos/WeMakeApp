@@ -4,10 +4,12 @@ import co.gov.wemake.wemakeapp.R;
 import co.gov.wemake.wemakeapp.R.id;
 import co.gov.wemake.wemakeapp.R.layout;
 import co.gov.wemake.wemakeapp.R.menu;
+import co.gov.wemake.wemakeapp.controller.RegisterController;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +20,7 @@ public class RegisterActivity extends Activity {
 	private TextView txtAge;
 	private TextView txtEmail;
 	private TextView txtPhone;
+	private TextView txtLastname;
 	private AutoCompleteTextView acProfession;
 	private ImageView btnNextFirstLayout;
 	private ImageView btnNextSecondLayout;
@@ -26,12 +29,15 @@ public class RegisterActivity extends Activity {
 	private AutoCompleteTextView acCity;
 	private AutoCompleteTextView acNeighborhood;
 	private AutoCompleteTextView acSkills;
+	private RegisterController registerController;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_register);
 		initLayoutOneComponents();
+		registerController = new RegisterController(this);
+
 	}
 
 	/**
@@ -39,11 +45,19 @@ public class RegisterActivity extends Activity {
 	 */
 	private void initLayoutOneComponents() {
 		txtName = (TextView) findViewById(R.id.txt_name);
+		txtLastname = (TextView) findViewById(R.id.txt_lastname);
 		txtAge = (TextView) findViewById(R.id.txt_age);
 		txtEmail = (TextView) findViewById(R.id.txt_email);
 		txtPhone = (TextView) findViewById(R.id.txt_phone);
 		btnNextFirstLayout = (ImageView) findViewById(R.id.btn_next_first_layout);
 
+	}
+
+	public void btnNextFirstLayout_Click(View view) {
+		registerController.verifyPartOneSingUpData(
+				txtName.getText().toString(), txtLastname.getText().toString(),
+				txtAge.getText().toString(), txtEmail.getText().toString(),
+				txtPhone.getText().toString());
 	}
 
 	/**
@@ -64,6 +78,11 @@ public class RegisterActivity extends Activity {
 		acCity = (AutoCompleteTextView) findViewById(R.id.ac_city);
 		acNeighborhood = (AutoCompleteTextView) findViewById(R.id.ac_neighborhood);
 		btnNextThirdLayout = (ImageView) findViewById(R.id.btn_next_third_layout);
+	}
+
+	public void changeToSecondLayout() {
+		setContentView(R.layout.activity_register_part_two);
+		initLayoutTwoComponents();
 	}
 
 	@Override

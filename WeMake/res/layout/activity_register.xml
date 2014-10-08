@@ -33,7 +33,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/txt_last_name"
+            android:id="@+id/txt_lastname"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -95,6 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:onClick="btnNextFirstLayout_Click"
         android:src="@drawable/ic_launcher" />
 
 </LinearLayout>

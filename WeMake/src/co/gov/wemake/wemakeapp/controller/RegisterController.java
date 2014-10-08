@@ -56,12 +56,14 @@ public class RegisterController extends AbstractController {
 			return;
 		if (!verifyLastname(lastname))
 			return;
-		if (!verifyAge(email))
-			return;
 		if (!verifyAge(age))
+			return;
+		if (!verifyEmail(email))
 			return;
 		if (!verifyPhone(phone))
 			return;
+		RegisterActivity registerActivity = (RegisterActivity) getActivity();
+		registerActivity.changeToSecondLayout();
 
 	}
 
@@ -171,7 +173,11 @@ public class RegisterController extends AbstractController {
 				firstPartOfEmail = email.substring(0, i);
 				System.out.println(firstPartOfEmail);
 				if (!verifyStringThatHasNumberPointDash(firstPartOfEmail)) {
-
+					showAlertMessage(
+							getActivity().getResources().getString(
+									R.string.alert_label),
+							getActivity().getResources().getString(
+									R.string.email_format_error));
 					return false;
 				}
 
@@ -306,9 +312,5 @@ public class RegisterController extends AbstractController {
 
 	}
 
-	private Activity getActivityType() {
-		RegisterActivity registerActivity = (RegisterActivity) getActivity();
-		return registerActivity;
-	}
-
+	
 }

@@ -6,7 +6,7 @@
     <string name="action_settings">Settings</string>
 
     <!-- String From RegisterActivity -->
-    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_register">Registro</string>
     <string name="name_label">Nombre:</string>
     <string name="name_hint_label">Nombre</string>
     <string name="last_hint_label">Apellido</string>

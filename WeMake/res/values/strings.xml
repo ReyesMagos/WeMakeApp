@@ -41,6 +41,7 @@
     <string name="lastname_format_error">Error el Apellido no puede contener Digitos, Ni espacios</string>
     <string name="email_format_error">Error el Email debe tener el formato texto@texto.com</string>
     <string name="phone_format_error">Error el telfono debe solo contener caracteres numericos </string>
+    
     <!-- String for Login Activity -->
     <string name="user_hint_text">Usuario</string>
     <string name="password_hint_text">Contraseña</string>

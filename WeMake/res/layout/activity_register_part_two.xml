@@ -8,50 +8,62 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin" >
 
-    <TextView
-        android:id="@+id/lbl_profession"
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/profession_label" />
+        android:layout_height="wrap_content" >
 
-    <AutoCompleteTextView
-        android:id="@+id/ac_profession"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:completionThreshold="1"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/profession_hint_label" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-        <requestFocus />
-    </AutoCompleteTextView>
+            <TextView
+                android:id="@+id/lbl_profession"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/profession_label" />
 
-    <TextView
-        android:id="@+id/lbl_skills"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/skills_label" />
+            <AutoCompleteTextView
+                android:id="@+id/ac_profession"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:completionThreshold="1"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/profession_hint_label" >
 
-    <AutoCompleteTextView
-        android:id="@+id/ac_skills"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:completionThreshold="1"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/skills_hint_label" >
-    </AutoCompleteTextView>
+                <requestFocus />
+            </AutoCompleteTextView>
 
-    <ImageView
-        android:id="@+id/btn_next_second_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:onClick="btnNextSecondLayout_Click"
-        android:src="@drawable/ic_launcher" />
+            <TextView
+                android:id="@+id/lbl_skills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/skills_label" />
+
+            <AutoCompleteTextView
+                android:id="@+id/ac_skills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:completionThreshold="1"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/skills_hint_label" >
+            </AutoCompleteTextView>
+
+            <ImageView
+                android:id="@+id/btn_next_second_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="btnNextSecondLayout_Click"
+                android:src="@drawable/ic_launcher" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

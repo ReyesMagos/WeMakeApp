@@ -10,92 +10,107 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="co.gov.wemake.wemakeapp.activities.RegisterActivity" >
 
-    <TextView
-        android:id="@+id/lbl_name"
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/name_label"
-        android:textSize="14sp" />
+        android:layout_height="wrap_content" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-        <EditText
-            android:id="@+id/txt_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/name_hint_label"
-            android:inputType="textPersonName" />
+            <TextView
+                android:id="@+id/lbl_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/name_label"
+                android:textSize="14sp" />
 
-        <EditText
-            android:id="@+id/txt_lastname"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/last_hint_label"
-            android:inputType="textPersonName" />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp" >
 
-    <TextView
-        android:id="@+id/lbl_age"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/age_label" />
+                <EditText
+                    android:id="@+id/txt_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/name_hint_label"
+                    android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/txt_age"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:hint="@string/age_hint_label"
-        android:inputType="number" />
+                <EditText
+                    android:id="@+id/txt_lastname"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/last_hint_label"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/lbl_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/email_label" />
+            <TextView
+                android:id="@+id/lbl_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/age_label" />
 
-    <EditText
-        android:id="@+id/txt_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:hint="@string/email_hint_label"
-        android:inputType="textEmailAddress" />
+            <EditText
+                android:id="@+id/txt_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/age_hint_label"
+                android:inputType="number" />
 
-    <TextView
-        android:id="@+id/lbl_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/phone_label" />
+            <TextView
+                android:id="@+id/lbl_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/email_label" />
 
-    <EditText
-        android:id="@+id/txt_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:hint="@string/phone_hint_label"
-        android:inputType="number" />
+            <EditText
+                android:id="@+id/txt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/email_hint_label"
+                android:inputType="textEmailAddress" />
 
-    <ImageView
-        android:id="@+id/btn_next_first_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:onClick="btnNextFirstLayout_Click"
-        android:src="@drawable/ic_launcher" />
+            <TextView
+                android:id="@+id/lbl_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/phone_label" />
+
+            <EditText
+                android:id="@+id/txt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/phone_hint_label"
+                android:inputType="number" />
+
+            <ImageView
+                android:id="@+id/btn_next_first_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="btnNextFirstLayout_Click"
+                android:src="@drawable/ic_launcher" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

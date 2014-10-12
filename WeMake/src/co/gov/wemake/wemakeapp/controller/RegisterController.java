@@ -5,6 +5,7 @@ import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
 import co.gov.wemake.wemakeapp.R;
+import co.gov.wemake.wemakeapp.activities.LoginActivity;
 import co.gov.wemake.wemakeapp.activities.RegisterActivity;
 import co.gov.wemake.wemakeapp.security.EncryptUtils;
 import android.annotation.SuppressLint;
@@ -232,6 +233,7 @@ public class RegisterController extends AbstractController {
 									R.string.alert_label),
 							getActivity().getResources().getString(
 									R.string.sing_up_success_full));
+					changeActivity(LoginActivity.class);
 				} else {
 					showAlertMessage(
 							getActivity().getResources().getString(

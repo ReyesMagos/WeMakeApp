@@ -15,8 +15,6 @@ public class RegisterController extends AbstractController {
 
 	private String[] professionArray;
 	private String[] skillsArray;
-<<<<<<< HEAD
-=======
 	private String[] statesArray;
 	private String[] cityArray;
 	private String[] neighborhoodArray;
@@ -32,7 +30,6 @@ public class RegisterController extends AbstractController {
 	private String city;
 	private String neighborhood;
 	private String password;
->>>>>>> oscar
 
 	public RegisterController(Activity activity) {
 		super(activity);
@@ -45,11 +42,7 @@ public class RegisterController extends AbstractController {
 				R.array.professions_array);
 		skillsArray = getActivity().getResources().getStringArray(
 				R.array.skills_array);
-<<<<<<< HEAD
-	}
-	
-	
-=======
+
 		statesArray = getActivity().getResources().getStringArray(
 				R.array.state_array);
 		cityArray = getActivity().getResources().getStringArray(
@@ -253,7 +246,6 @@ public class RegisterController extends AbstractController {
 			}
 		});
 	}
->>>>>>> oscar
 
 	public String[] getProfessionArray() {
 		return professionArray;

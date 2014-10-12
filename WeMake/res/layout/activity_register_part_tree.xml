@@ -42,9 +42,8 @@
         android:layout_marginBottom="30dp"
         android:completionThreshold="1"
         android:ems="10"
+        android:gravity="center"
         android:hint="@string/city_hint_label" >
-
-        <requestFocus />
     </AutoCompleteTextView>
 
     <TextView
@@ -61,9 +60,8 @@
         android:layout_marginBottom="30dp"
         android:completionThreshold="1"
         android:ems="10"
+        android:gravity="center"
         android:hint="@string/neighborhood_hint_label" >
-
-        <requestFocus />
     </AutoCompleteTextView>
 
     <ImageView
@@ -71,6 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:onClick="btnNextThirdLayout_Click"
         android:src="@drawable/ic_launcher" />
 
 </LinearLayout>

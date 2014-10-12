@@ -9,7 +9,7 @@ public class RegisterControllerTest extends AndroidTestCase {
 
 	public void testVerifyName() {
 		Activity a = new Activity();
-		String testString = "oscar david gallon1";
+		String testString = "oscar";
 		RegisterController registerController = new RegisterController(a);
 		assertTrue(registerController.verifyName(testString));
 		
@@ -24,7 +24,7 @@ public class RegisterControllerTest extends AndroidTestCase {
 	
 	public void testVerifyAge(){
 		Activity a = new Activity();
-		String testString = "27";
+		String testString = "18";
 		RegisterController registerController = new RegisterController(a);
 		assertTrue(registerController.verifyAge(testString));
 	}

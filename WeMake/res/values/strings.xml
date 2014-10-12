@@ -7,6 +7,7 @@
 
     <!-- String From RegisterActivity -->
     <string name="title_activity_register">Registro</string>
+    <string name="username_label">Usuario:</string>
     <string name="name_label">Nombre:</string>
     <string name="name_hint_label">Nombre</string>
     <string name="last_hint_label">Apellido</string>
@@ -32,16 +33,42 @@
     <string name="no_email_alert">Error No ingreso Email</string>
     <string name="no_lastname_alert">Error no ingreso Apellido</string>
     <string name="no_phone_alert">Error no ingreso Telefono</string>
+    <string name="username_lentght_error">Error el Usuario debe ser de minimo 6 caracteres</string>
     <string name="name_lenght_error">Error el Nombre debe ser minimo de 4 caracteres</string>
     <string name="lasname_lenght_error">Error el Apellido debe ser minimo de 5 caracteres</string>
     <string name="age_lenght_error">Error la Edad debe ser minimo de 2 caracteres </string>
     <string name="phone_length_error">Error la longitud del Telefono debe ser de 7 a 10 caracteres</string>
     <string name="age_no_number_error">Error la Edad debe ser numerica</string>
+    <string name="username_format_error">Error el Usuario no debe contener espacios</string>
     <string name="name_format_error">Error el Nombre no puede contener Digitos, Ni espacios</string>
     <string name="lastname_format_error">Error el Apellido no puede contener Digitos, Ni espacios</string>
     <string name="email_format_error">Error el Email debe tener el formato texto@texto.com</string>
     <string name="phone_format_error">Error el telfono debe solo contener caracteres numericos </string>
+<<<<<<< HEAD
     
+=======
+    <string name="no_profession_label">Error debe seleccionar alguna Profesion</string>
+    <string name="no_skills_label">Error debe seleccionar alguna Habilidad</string>
+    <string name="no_state_label">Error debe Seleccionar algun Departamento</string>
+    <string name="no_city_label">Error debe Seleccionar algun Municipio/Ciudad</string>
+    <string name="no_neighborhood_label">Error debe Seleccionar algun Barrio</string>
+    <string name="age_less_than_18">Para registrarte debes ser mayor a 18 Años</string>
+    <string name="password_label">Contraseña:</string>
+    <string name="password_hint">Password</string>
+    <string name="password_confirmation_hint">Confirmacion</string>
+    <string name="no_username_alert">Error no ingreso el Usuario</string>
+    <string name="no_password_alert">Error no ingreso Contraseña</string>
+    <string name="no_password_confirmation_alert">Error no ingreso Confirmacion de Contraseña</string>
+    <string name="password_length_error">Error la contraseña  debe ser minimo de 6 caracteres</string>
+    <string name="confirmation_length_error">Error la Confirmacion de Contraseña  debe ser minimo de 6 caracteres</string>
+    <string name="password_do_not_match_with_confirmation_error">Error las Contraseñas no Coinciden</string>
+    <string name="password_confirmation_format_error">Error la confirmacion no debe contener espacios</string>
+    <string name="password_format_error">Error la contraseña no debe contener espacios</string>
+    <string name="sing_up_success_full">Registrado Correctamente</string>
+    <string name="sing_up_error">Error al efectuar el registro codigo: </string>
+    <string name="sing_up_ongoing">Registrando Por Favor Espere</string>
+
+>>>>>>> oscar
     <!-- String for Login Activity -->
     <string name="user_hint_text">Usuario</string>
     <string name="password_hint_text">Contraseña</string>

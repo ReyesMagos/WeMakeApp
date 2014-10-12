@@ -27,6 +27,9 @@ public class RegisterActivity extends Activity {
 	private TextView txtEmail;
 	private TextView txtPhone;
 	private TextView txtLastname;
+	private TextView txtUsername;
+	private TextView txtPassword;
+	private TextView txtPasswordConfirmation;
 	private AutoCompleteTextView acProfession;
 	private ImageView btnNextFirstLayout;
 	private ImageView btnNextSecondLayout;
@@ -38,6 +41,17 @@ public class RegisterActivity extends Activity {
 	private RegisterController registerController;
 	private ArrayAdapter<String> acProfessionsAdapter;
 	private ArrayAdapter<String> acSkillsAdapter;
+<<<<<<< HEAD
+=======
+	private ArrayAdapter<String> acStateAdapter;
+	private ArrayAdapter<String> acCityAdapter;
+	private ArrayAdapter<String> acNeighborhoodAdapter;
+	private String stateSelected;
+	private String citySelected;
+	private String neighborhoodSelected;
+	private String professionSelected;
+	private String skillsSelected;
+>>>>>>> oscar
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +66,7 @@ public class RegisterActivity extends Activity {
 	 * this method is for initialize the first layout components.
 	 */
 	private void initLayoutOneComponents() {
+
 		txtName = (TextView) findViewById(R.id.txt_name);
 		txtLastname = (TextView) findViewById(R.id.txt_lastname);
 		txtAge = (TextView) findViewById(R.id.txt_age);
@@ -66,6 +81,23 @@ public class RegisterActivity extends Activity {
 				txtName.getText().toString(), txtLastname.getText().toString(),
 				txtAge.getText().toString(), txtEmail.getText().toString(),
 				txtPhone.getText().toString());
+	}
+
+	public void btnNextSecondLayout_Click(View view) {
+		registerController.verifyPartTwoSingUpData(professionSelected,
+				skillsSelected);
+	}
+
+	public void btnNextThirdLayout_Click(View view) {
+		registerController.verifyPartThreeSingUpData(stateSelected,
+				citySelected, neighborhoodSelected);
+	}
+
+	public void btnNextFourthLayout_Click(View view) {
+		registerController.verifyPartFourthSingUpData(txtUsername.getText()
+				.toString(), txtPassword.getText().toString(),
+				txtPasswordConfirmation.getText().toString());
+
 	}
 
 	/**
@@ -94,9 +126,15 @@ public class RegisterActivity extends Activity {
 					int position, long arg3) {
 				// TODO Auto-generated method stub
 
+<<<<<<< HEAD
 				Toast.makeText(getApplicationContext(),
 						adapter.getAdapter().getItem(position).toString(),
 						Toast.LENGTH_LONG).show();
+=======
+				professionSelected = adapter.getAdapter().getItem(position)
+						.toString();
+
+>>>>>>> oscar
 			}
 		});
 
@@ -106,9 +144,15 @@ public class RegisterActivity extends Activity {
 			public void onItemClick(AdapterView<?> adapter, View arg1,
 					int position, long arg3) {
 				// TODO Auto-generated method stub
+<<<<<<< HEAD
 				Toast.makeText(getApplicationContext(),
 						adapter.getAdapter().getItem(position).toString(),
 						Toast.LENGTH_LONG).show();
+=======
+				skillsSelected = adapter.getAdapter().getItem(position)
+						.toString();
+
+>>>>>>> oscar
 			}
 		});
 
@@ -122,11 +166,80 @@ public class RegisterActivity extends Activity {
 		acCity = (AutoCompleteTextView) findViewById(R.id.ac_city);
 		acNeighborhood = (AutoCompleteTextView) findViewById(R.id.ac_neighborhood);
 		btnNextThirdLayout = (ImageView) findViewById(R.id.btn_next_third_layout);
+
+		acStateAdapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1,
+				registerController.getStatesArray());
+		acState.setAdapter(acStateAdapter);
+
+		acState.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> adapter, View arg1,
+					int position, long arg3) {
+				// TODO Auto-generated method stub
+				stateSelected = adapter.getAdapter().getItem(position)
+						.toString();
+
+			}
+		});
+
+		acCityAdapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1,
+				registerController.getCityArray());
+		acCity.setAdapter(acCityAdapter);
+
+		acCity.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> adapter, View arg1,
+					int position, long arg3) {
+				// TODO Auto-generated method stub
+				citySelected = adapter.getAdapter().getItem(position)
+						.toString();
+
+			}
+		});
+
+		acNeighborhoodAdapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1,
+				registerController.getNeighborhoodArray());
+		acNeighborhood.setAdapter(acNeighborhoodAdapter);
+
+		acNeighborhood.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> adapter, View arg1,
+					int position, long arg3) {
+				// TODO Auto-generated method stub
+				neighborhoodSelected = adapter.getAdapter().getItem(position)
+						.toString();
+
+			}
+		});
+
+	}
+
+	public void initLayoutFourthComponents() {
+		txtUsername = (TextView) findViewById(R.id.txt_username);
+		txtPassword = (TextView) findViewById(R.id.txt_password);
+		txtPasswordConfirmation = (TextView) findViewById(R.id.txt_password_confirmation);
+
 	}
 
 	public void changeToSecondLayout() {
 		setContentView(R.layout.activity_register_part_two);
 		initLayoutTwoComponents();
+	}
+
+	public void changeToThirdLayout() {
+		setContentView(R.layout.activity_register_part_tree);
+		initLayoutThreeComponents();
+	}
+
+	public void changeToFourthLayout() {
+		setContentView(R.layout.activity_register_fourth);
+		initLayoutFourthComponents();
 	}
 
 	@Override

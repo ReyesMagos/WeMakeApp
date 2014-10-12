@@ -8,13 +8,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin" >
 
-    <TextView
-        android:id="@+id/lbl_state"
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/state_label" />
+        android:layout_height="wrap_content" >
 
+<<<<<<< HEAD
     <AutoCompleteTextView
         android:id="@+id/ac_state"
         android:layout_width="match_parent"
@@ -24,17 +23,31 @@
         android:ems="10"
         android:gravity="center"
         android:hint="@string/state_hint_label" >
+=======
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+>>>>>>> oscar
 
-        <requestFocus />
-    </AutoCompleteTextView>
+            <TextView
+                android:id="@+id/lbl_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/state_label" />
 
-    <TextView
-        android:id="@+id/lbl_city"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/city_label" />
+            <AutoCompleteTextView
+                android:id="@+id/ac_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:completionThreshold="1"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/state_hint_label" >
 
+<<<<<<< HEAD
     <AutoCompleteTextView
         android:id="@+id/ac_city"
         android:layout_width="match_parent"
@@ -43,17 +56,30 @@
         android:completionThreshold="1"
         android:ems="10"
         android:hint="@string/city_hint_label" >
+=======
+                <requestFocus />
+            </AutoCompleteTextView>
+>>>>>>> oscar
 
-        <requestFocus />
-    </AutoCompleteTextView>
+            <TextView
+                android:id="@+id/lbl_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/city_label" />
 
-    <TextView
-        android:id="@+id/lbl_neighborhood"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/neighborhood_label" />
+            <AutoCompleteTextView
+                android:id="@+id/ac_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:completionThreshold="1"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/city_hint_label" >
+            </AutoCompleteTextView>
 
+<<<<<<< HEAD
     <AutoCompleteTextView
         android:id="@+id/ac_neighborhood"
         android:layout_width="match_parent"
@@ -72,5 +98,34 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:src="@drawable/ic_launcher" />
+=======
+            <TextView
+                android:id="@+id/lbl_neighborhood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/neighborhood_label" />
+
+            <AutoCompleteTextView
+                android:id="@+id/ac_neighborhood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:completionThreshold="1"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/neighborhood_hint_label" >
+            </AutoCompleteTextView>
+
+            <ImageView
+                android:id="@+id/btn_next_third_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="btnNextThirdLayout_Click"
+                android:src="@drawable/ic_launcher" />
+        </LinearLayout>
+    </ScrollView>
+>>>>>>> oscar
 
 </LinearLayout>

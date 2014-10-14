@@ -71,7 +71,7 @@
                 android:id="@+id/button_login"
                 android:layout_width="130dp"
                 android:layout_height="65dp"
-                android:onClick="logIn"
+                android:onClick="buttonLogin_Click"
                 android:src="@drawable/ic_launcher" />
 
             <ImageView

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import co.gov.wemake.wemakeapp.R;
 import co.gov.wemake.wemakeapp.controller.LoginController;
+import co.gov.wemake.wemakeapp.security.EncryptUtils;
 
 import com.parse.Parse;
 
@@ -58,8 +59,10 @@ public class LoginActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void onLoginClick(View view) {
+	public void buttonLogin_Click(View view) {
 
+		loginController.login(userNameEditText.getText().toString()
+				.toLowerCase(), passwordEditText.getText().toString());
 	}
 
 	public void singUp(View view) {

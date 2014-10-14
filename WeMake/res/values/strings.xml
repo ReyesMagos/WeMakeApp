@@ -70,5 +70,10 @@
     <string name="password_hint_text">Contraseña</string>
     <string name="parse_id_number">oqPVy34Q3lVwxi56FcVcGDishkY9Wg2JVL7ggBL4</string>
     <string name="parse_key_number">EbmtfciIe91q9GZWp9jnsrsjKAidqDA5UHBS3dvj</string>
+    <string name="login_error">Sucedio un error al intentar acceder a la aplicacion. Codigo: </string>
+    <string name="login_ongoing">Ingresando a la aplicacion por favor espere</string>
+    <string name="invalid_login_credentials">Error en la combinacion de Usuario y Contraseña Por favor Verifique</string>
+    <string name="network_problem">Error de red</string>
+    <string name="email_not_verified">Error debe verificar, su email para poder ingresar a la aplicacion</string>
 
 </resources>

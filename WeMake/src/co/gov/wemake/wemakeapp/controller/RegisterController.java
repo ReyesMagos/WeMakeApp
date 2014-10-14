@@ -75,6 +75,35 @@ public class RegisterController extends AbstractController {
 		this.neighborhoodArray = neighborhoodArray;
 	}
 
+	@SuppressLint("NewApi") public boolean verifyPassword(String password) {
+		if (password == null || password.equals(" ")) {
+			return false;
+		}
+		if (password.length() < 5) {
+			showAlertMessage(
+					getActivity().getResources()
+							.getString(R.string.alert_label),
+					getActivity().getResources().getString(
+							R.string.password_length_error));
+			return false;
+		}
+
+		for (int i = 0; i < password.length(); i++) {
+			if (!(Character.isAlphabetic(password.charAt(i)) || !Character
+					.toString(password.charAt(i)).equals(" "))) {
+
+				showAlertMessage(
+						getActivity().getResources().getString(
+								R.string.alert_label),
+						getActivity().getResources().getString(
+								R.string.password_format_error));
+				return false;
+			}
+
+		}
+		return true;
+	}
+
 	public void verifyPartFourthSingUpData(String username, String password,
 			String passwordConfirmation) {
 		if (username == null || username.equals(" ")) {
@@ -111,7 +140,7 @@ public class RegisterController extends AbstractController {
 			return;
 		}
 
-		if (!verifyUsername(password)) {
+		if (!verifyPassword(password)) {
 			showAlertMessage(
 					getActivity().getResources()
 							.getString(R.string.alert_label),
@@ -120,7 +149,7 @@ public class RegisterController extends AbstractController {
 			return;
 		}
 
-		if (!verifyUsername(passwordConfirmation)) {
+		if (!verifyPassword(passwordConfirmation)) {
 			showAlertMessage(
 					getActivity().getResources()
 							.getString(R.string.alert_label),

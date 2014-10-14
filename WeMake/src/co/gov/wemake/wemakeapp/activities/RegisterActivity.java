@@ -41,8 +41,6 @@ public class RegisterActivity extends Activity {
 	private RegisterController registerController;
 	private ArrayAdapter<String> acProfessionsAdapter;
 	private ArrayAdapter<String> acSkillsAdapter;
-<<<<<<< HEAD
-=======
 	private ArrayAdapter<String> acStateAdapter;
 	private ArrayAdapter<String> acCityAdapter;
 	private ArrayAdapter<String> acNeighborhoodAdapter;
@@ -51,7 +49,6 @@ public class RegisterActivity extends Activity {
 	private String neighborhoodSelected;
 	private String professionSelected;
 	private String skillsSelected;
->>>>>>> oscar
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -126,15 +123,15 @@ public class RegisterActivity extends Activity {
 					int position, long arg3) {
 				// TODO Auto-generated method stub
 
-<<<<<<< HEAD
+
 				Toast.makeText(getApplicationContext(),
 						adapter.getAdapter().getItem(position).toString(),
 						Toast.LENGTH_LONG).show();
-=======
+
 				professionSelected = adapter.getAdapter().getItem(position)
 						.toString();
 
->>>>>>> oscar
+
 			}
 		});
 
@@ -144,15 +141,13 @@ public class RegisterActivity extends Activity {
 			public void onItemClick(AdapterView<?> adapter, View arg1,
 					int position, long arg3) {
 				// TODO Auto-generated method stub
-<<<<<<< HEAD
+
 				Toast.makeText(getApplicationContext(),
 						adapter.getAdapter().getItem(position).toString(),
 						Toast.LENGTH_LONG).show();
-=======
 				skillsSelected = adapter.getAdapter().getItem(position)
 						.toString();
 
->>>>>>> oscar
 			}
 		});
 

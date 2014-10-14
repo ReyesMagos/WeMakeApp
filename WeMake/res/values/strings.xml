@@ -44,9 +44,6 @@
     <string name="lastname_format_error">Error el Apellido no puede contener Digitos, Ni espacios</string>
     <string name="email_format_error">Error el Email debe tener el formato texto@texto.com</string>
     <string name="phone_format_error">Error el telfono debe solo contener caracteres numericos </string>
-<<<<<<< HEAD
-    
-=======
     <string name="no_profession_label">Error debe seleccionar alguna Profesion</string>
     <string name="no_skills_label">Error debe seleccionar alguna Habilidad</string>
     <string name="no_state_label">Error debe Seleccionar algun Departamento</string>
@@ -68,7 +65,6 @@
     <string name="sing_up_error">Error al efectuar el registro codigo: </string>
     <string name="sing_up_ongoing">Registrando Por Favor Espere</string>
 
->>>>>>> oscar
     <!-- String for Login Activity -->
     <string name="user_hint_text">Usuario</string>
     <string name="password_hint_text">Contraseña</string>

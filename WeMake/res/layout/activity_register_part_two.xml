@@ -13,21 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-<<<<<<< HEAD
-    <AutoCompleteTextView
-        android:id="@+id/ac_profession"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:completionThreshold="1"
-        android:hint="@string/profession_hint_label" >
-=======
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" >
->>>>>>> oscar
 
             <TextView
                 android:id="@+id/lbl_profession"
@@ -46,56 +35,33 @@
                 android:gravity="center"
                 android:hint="@string/profession_hint_label" >
 
-<<<<<<< HEAD
-    <AutoCompleteTextView
-        android:id="@+id/ac_skills"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-         android:completionThreshold="1"
-        android:layout_marginBottom="30dp"
-        android:hint="@string/skills_hint_label" >
+                <TextView
+                    android:id="@+id/lbl_skills"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/skills_label" />
 
-        <requestFocus />
-    </AutoCompleteTextView>
+                <AutoCompleteTextView
+                    android:id="@+id/ac_skills"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:completionThreshold="1"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/skills_hint_label" >
+                </AutoCompleteTextView>
 
-    <ImageView
-        android:id="@+id/btn_next_second_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/ic_launcher" />
-=======
-                <requestFocus />
+                <ImageView
+                    android:id="@+id/btn_next_second_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:onClick="btnNextSecondLayout_Click"
+                    android:src="@drawable/ic_launcher" />
             </AutoCompleteTextView>
-
-            <TextView
-                android:id="@+id/lbl_skills"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/skills_label" />
-
-            <AutoCompleteTextView
-                android:id="@+id/ac_skills"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:completionThreshold="1"
-                android:ems="10"
-                android:gravity="center"
-                android:hint="@string/skills_hint_label" >
-            </AutoCompleteTextView>
-
-            <ImageView
-                android:id="@+id/btn_next_second_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:onClick="btnNextSecondLayout_Click"
-                android:src="@drawable/ic_launcher" />
         </LinearLayout>
     </ScrollView>
->>>>>>> oscar
 
 </LinearLayout>

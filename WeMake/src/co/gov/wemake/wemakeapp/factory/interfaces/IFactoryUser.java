@@ -6,7 +6,7 @@ import com.parse.ParseUser;
 
 public interface IFactoryUser {
 
-	public User creaUser(ParseUser user);
+	public User createUser(ParseUser parseUser);
 
 	public User getCurrentUserInActivity();
 

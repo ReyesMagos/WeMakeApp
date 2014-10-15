@@ -41,7 +41,6 @@ public class RegisterActivity extends Activity {
 	private RegisterController registerController;
 	private ArrayAdapter<String> acProfessionsAdapter;
 	private ArrayAdapter<String> acSkillsAdapter;
-
 	private ArrayAdapter<String> acStateAdapter;
 	private ArrayAdapter<String> acCityAdapter;
 	private ArrayAdapter<String> acNeighborhoodAdapter;
@@ -124,12 +123,14 @@ public class RegisterActivity extends Activity {
 					int position, long arg3) {
 				// TODO Auto-generated method stub
 
+
 				Toast.makeText(getApplicationContext(),
 						adapter.getAdapter().getItem(position).toString(),
 						Toast.LENGTH_LONG).show();
 
 				professionSelected = adapter.getAdapter().getItem(position)
 						.toString();
+
 
 			}
 		});
@@ -144,7 +145,6 @@ public class RegisterActivity extends Activity {
 				Toast.makeText(getApplicationContext(),
 						adapter.getAdapter().getItem(position).toString(),
 						Toast.LENGTH_LONG).show();
-
 				skillsSelected = adapter.getAdapter().getItem(position)
 						.toString();
 

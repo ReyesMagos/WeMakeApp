@@ -10,6 +10,8 @@ import co.gov.wemake.wemakeapp.activities.RegisterActivity;
 import co.gov.wemake.wemakeapp.security.EncryptUtils;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 public class RegisterController extends AbstractController {
 
@@ -30,6 +32,7 @@ public class RegisterController extends AbstractController {
 	private String city;
 	private String neighborhood;
 	private String password;
+	private String encryptedPassword;
 
 	public RegisterController(Activity activity) {
 		super(activity);
@@ -76,6 +79,7 @@ public class RegisterController extends AbstractController {
 		this.neighborhoodArray = neighborhoodArray;
 	}
 
+	@SuppressLint("NewApi")
 	public void verifyPartFourthSingUpData(String username, String password,
 			String passwordConfirmation) {
 		if (username == null || username.equals(" ")) {
@@ -103,7 +107,7 @@ public class RegisterController extends AbstractController {
 							R.string.confirmation_length_error));
 			return;
 		}
-		if (!verifyUsername(username)) {
+		if (!verifyString(6, 0, username)) {
 			showAlertMessage(
 					getActivity().getResources()
 							.getString(R.string.alert_label),
@@ -112,7 +116,7 @@ public class RegisterController extends AbstractController {
 			return;
 		}
 
-		if (!verifyUsername(password)) {
+		if (!verifyString(6, 0, password)) {
 			showAlertMessage(
 					getActivity().getResources()
 							.getString(R.string.alert_label),
@@ -121,7 +125,7 @@ public class RegisterController extends AbstractController {
 			return;
 		}
 
-		if (!verifyUsername(passwordConfirmation)) {
+		if (!verifyString(6, 0, passwordConfirmation)) {
 			showAlertMessage(
 					getActivity().getResources()
 							.getString(R.string.alert_label),
@@ -140,7 +144,8 @@ public class RegisterController extends AbstractController {
 			return;
 		}
 		this.username = username.toLowerCase();
-		this.password = EncryptUtils.stringToSha1(password);
+		this.password = password;
+		this.encryptedPassword = EncryptUtils.stringToSha1(password);
 		singUpUser();
 
 	}
@@ -207,6 +212,103 @@ public class RegisterController extends AbstractController {
 
 	}
 
+	@SuppressLint("NewApi") public boolean verifyString(int lenght, int messageType, String input) {
+		String lenghtErrorMessage = "";
+		String formatErrorMessage = "";
+
+		switch (messageType) {
+		case 0:// this case its for username
+			lenghtErrorMessage = getActivity().getResources().getString(
+					R.string.username_lentght_error);
+			formatErrorMessage = getActivity().getResources().getString(
+					R.string.username_format_error);
+
+			break;
+		case 1:// this case its for password
+			lenghtErrorMessage = getActivity().getResources().getString(
+					R.string.password_format_error);
+			formatErrorMessage = getActivity().getResources().getString(
+					R.string.password_format_error);
+			break;
+
+		}
+		if (input.length() < lenght) {
+			showAlertMessage(
+					getActivity().getResources()
+							.getString(R.string.alert_label),
+					lenghtErrorMessage);
+			return false;
+		}
+
+		for (int i = 0; i < input.length(); i++) {
+			if (!(Character.isAlphabetic(input.charAt(i)) || !Character
+					.toString(input.charAt(i)).equals(" "))) {
+
+				showAlertMessage(
+						getActivity().getResources().getString(
+								R.string.alert_label), formatErrorMessage);
+				return false;
+			}
+
+		}
+		return true;
+
+	}
+
+	@SuppressLint("NewApi") public boolean verifyString2(int lenght, int messageType, String input) {
+		String lenghtErrorMessage = "";
+		String formatErrorMessage = "";
+		switch (messageType) {
+		case 0:// this case its for name
+			lenghtErrorMessage = getActivity().getResources().getString(
+					R.string.name_lenght_error);
+			formatErrorMessage = getActivity().getResources().getString(
+					R.string.name_format_error);
+
+			break;
+		case 1:// this case its for lastname
+			lenghtErrorMessage = getActivity().getResources().getString(
+					R.string.lasname_lenght_error);
+			formatErrorMessage = getActivity().getResources().getString(
+					R.string.lastname_format_error);
+			break;
+
+		}
+
+		if (input.length() < lenght) {
+			showAlertMessage(
+					getActivity().getResources()
+							.getString(R.string.alert_label),
+					getActivity().getResources().getString(
+							R.string.name_lenght_error));
+			return false;
+		}
+
+		for (int i = 0; i < input.length(); i++) {
+			if (!(Character.isAlphabetic(input.charAt(i)) || !Character
+					.toString(input.charAt(i)).equals(" "))) {
+
+				showAlertMessage(
+						getActivity().getResources().getString(
+								R.string.alert_label),
+						getActivity().getResources().getString(
+								R.string.name_format_error));
+				return false;
+			}
+
+			if (Character.isDigit(input.charAt(i))) {
+				showAlertMessage(
+						getActivity().getResources().getString(
+								R.string.alert_label),
+						getActivity().getResources().getString(
+								R.string.name_format_error));
+				return false;
+			}
+		}
+		return true;
+
+	}
+
 	public void singUpUser() {
 		showProgressDialog(
 				getActivity().getResources().getString(R.string.alert_label),
@@ -214,7 +316,7 @@ public class RegisterController extends AbstractController {
 						.getString(R.string.sing_up_ongoing));
 		ParseUser user = new ParseUser();
 		user.setUsername(username);
-		user.setPassword(password);
+		user.setPassword(encryptedPassword);
 		user.setEmail(email);
 		user.put("name", name);
 		user.put("lastname", lastname);
@@ -234,6 +336,13 @@ public class RegisterController extends AbstractController {
 									R.string.alert_label),
 							getActivity().getResources().getString(
 									R.string.sing_up_success_full));
+					SharedPreferences sharedPreferences = PreferenceManager
+							.getDefaultSharedPreferences(getActivity()
+									.getApplicationContext());
+					SharedPreferences.Editor editor = sharedPreferences.edit();
+					editor.putString("username", username);
+					editor.putString("password", password);
+					editor.commit();
 					changeActivity(LoginActivity.class);
 				} else {
 					showAlertMessage(
@@ -303,9 +412,9 @@ public class RegisterController extends AbstractController {
 			return;
 		}
 
-		if (!verifyName(name))
+		if (!verifyString2(3, 0, name))
 			return;
-		if (!verifyLastname(lastname))
+		if (!verifyString2(3, 0, lastname))
 			return;
 		if (!verifyAge(age))
 			return;
@@ -322,113 +431,6 @@ public class RegisterController extends AbstractController {
 
 		RegisterActivity registerActivity = (RegisterActivity) getActivity();
 		registerActivity.changeToSecondLayout();
-
-	}
-
-	@SuppressLint("NewApi")
-	public boolean verifyUsername(String username) {
-		if (username.length() < 5) {
-			showAlertMessage(
-					getActivity().getResources()
-							.getString(R.string.alert_label),
-					getActivity().getResources().getString(
-							R.string.username_lentght_error));
-			return false;
-		}
-
-		for (int i = 0; i < username.length(); i++) {
-			if (!(Character.isAlphabetic(username.charAt(i)) || !Character
-					.toString(username.charAt(i)).equals(" "))) {
-
-				showAlertMessage(
-						getActivity().getResources().getString(
-								R.string.alert_label),
-						getActivity().getResources().getString(
-								R.string.username_format_error));
-				return false;
-			}
-
-		}
-		return true;
-
-	}
-
-	/**
-	 * this method verify the name of the users. The name can contain numbers,
-	 * but if has another especial character it will return false
-	 * 
-	 * @param name
-	 *            the name of user
-	 * @return true if name is ok, false beside
-	 */
-	@SuppressLint("NewApi")
-	public boolean verifyName(String name) {
-		if (name.length() < 3) {
-			showAlertMessage(
-					getActivity().getResources()
-							.getString(R.string.alert_label),
-					getActivity().getResources().getString(
-							R.string.name_lenght_error));
-			return false;
-		}
-
-		for (int i = 0; i < name.length(); i++) {
-			if (!(Character.isAlphabetic(name.charAt(i)) || !Character
-					.toString(name.charAt(i)).equals(" "))) {
-
-				showAlertMessage(
-						getActivity().getResources().getString(
-								R.string.alert_label),
-						getActivity().getResources().getString(
-								R.string.name_format_error));
-				return false;
-			}
-
-			if (Character.isDigit(name.charAt(i))) {
-				showAlertMessage(
-						getActivity().getResources().getString(
-								R.string.alert_label),
-						getActivity().getResources().getString(
-								R.string.name_format_error));
-				return false;
-			}
-		}
-		return true;
-
-	}
-
-	@SuppressLint("NewApi")
-	public boolean verifyLastname(String lastname) {
-		if (lastname.length() < 4) {
-			showAlertMessage(
-					getActivity().getResources()
-							.getString(R.string.alert_label),
-					getActivity().getResources().getString(
-							R.string.lasname_lenght_error));
-			return false;
-
-		}
-
-		for (int i = 0; i < lastname.length(); i++) {
-			if (!(Character.isAlphabetic(lastname.charAt(i)) || !Character
-					.isWhitespace(lastname.charAt(i)))) {
-				showAlertMessage(
-						getActivity().getResources().getString(
-								R.string.alert_label),
-						getActivity().getResources().getString(
-								R.string.lasname_lenght_error));
-				return false;
-			}
-			if (Character.isDigit(lastname.charAt(i))) {
-				showAlertMessage(
-						getActivity().getResources().getString(
-								R.string.alert_label),
-						getActivity().getResources().getString(
-								R.string.name_format_error));
-				return false;
-			}
-		}
-		return true;
 
 	}
 

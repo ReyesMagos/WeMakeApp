@@ -1,7 +1,9 @@
 package co.gov.wemake.wemakeapp.activities;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +31,10 @@ public class LoginActivity extends Activity {
 				getString(R.string.parse_key_number));
 		createComponents();
 		loginController = new LoginController(this);
+		SharedPreferences sharedPreferences =PreferenceManager
+				.getDefaultSharedPreferences(getApplicationContext());
+		username = sharedPreferences.getString("username", "NAN");
+		password = sharedPreferences.getString("password", "NAN");
 	}
 
 	private void createComponents() {
@@ -37,7 +43,10 @@ public class LoginActivity extends Activity {
 				.findViewById(R.id.txt_username);
 		this.passwordEditText = (EditText) super
 				.findViewById(R.id.txt_password);
-
+		if (username!=null && !username.equals("NAN"))
+			userNameEditText.setText(username);
+		if (password!=null && !password.equals("NAN"))
+			passwordEditText.setText(password);
 	}
 
 	@Override

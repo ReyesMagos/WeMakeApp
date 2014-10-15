@@ -75,5 +75,9 @@
     <string name="invalid_login_credentials">Error en la combinacion de Usuario y Contraseña Por favor Verifique</string>
     <string name="network_problem">Error de red</string>
     <string name="email_not_verified">Error debe verificar, su email para poder ingresar a la aplicacion</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+
+    <!-- String for Profile Activity -->
+    <string name="profession_and_skills_label">Profesion/Habilidades</string>
 
 </resources>

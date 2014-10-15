@@ -1,6 +1,9 @@
 package co.gov.wemake.wemakeapp.controller;
 
+import java.lang.annotation.RetentionPolicy;
+
 import co.gov.wemake.wemakeapp.R;
+import co.gov.wemake.wemakeapp.activities.ProfileActivity;
 import co.gov.wemake.wemakeapp.factory.FactoryUser;
 import co.gov.wemake.wemakeapp.security.EncryptUtils;
 
@@ -97,8 +100,11 @@ public class LoginController extends AbstractController {
 
 							FactoryUser factoryUser = FactoryUser.getInstance();
 							factoryUser.setUser(factoryUser.createUser(user));
-							if (user.getBoolean("emailVerified"))
+							if (user.getBoolean("emailVerified")) {
 								Log.i("Login", "success");
+								changeActivity(ProfileActivity.class);
+							}
+
 							else
 								showAlertMessage(
 										getActivity().getResources().getString(

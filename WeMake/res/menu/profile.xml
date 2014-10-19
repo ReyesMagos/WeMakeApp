@@ -2,11 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="co.gov.wemake.wemakeapp.ProfileActivity" >
 
+
     <item
         android:id="@+id/upload_profile_picture"
         android:icon="@drawable/ic_launcher"
         android:orderInCategory="100"
-        android:showAsAction="always"
+        android:showAsAction="ifRoom"
         android:title="@string/action_settings"/>
 
 </menu>

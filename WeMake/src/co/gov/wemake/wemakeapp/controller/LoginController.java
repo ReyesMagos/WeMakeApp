@@ -1,5 +1,6 @@
 package co.gov.wemake.wemakeapp.controller;
 
+import java.io.ByteArrayOutputStream;
 import java.lang.annotation.RetentionPolicy;
 
 import co.gov.wemake.wemakeapp.R;
@@ -9,13 +10,15 @@ import co.gov.wemake.wemakeapp.security.EncryptUtils;
 
 import com.parse.LogInCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
-
-
 
 public class LoginController extends AbstractController {
 
@@ -52,8 +55,6 @@ public class LoginController extends AbstractController {
 		}
 		return true;
 	}
-	
-	
 
 	@SuppressLint("NewApi")
 	public boolean verifyPassword(String password) {
@@ -148,4 +149,5 @@ public class LoginController extends AbstractController {
 					}
 				});
 	}
+
 }

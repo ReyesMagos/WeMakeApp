@@ -1,14 +1,26 @@
 package co.gov.wemake.wemakeapp.activities;
 
+import java.io.ByteArrayOutputStream;
+
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
+
 import co.gov.wemake.wemakeapp.R;
 import co.gov.wemake.wemakeapp.R.id;
 import co.gov.wemake.wemakeapp.R.layout;
 import co.gov.wemake.wemakeapp.R.menu;
 import co.gov.wemake.wemakeapp.controller.ProfileController;
+import co.gov.wemake.wemakeapp.factory.FactoryUser;
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ProfileActivity extends Activity {
@@ -20,6 +32,7 @@ public class ProfileActivity extends Activity {
 	private TextView txtProfession;
 	private TextView txtSkills;
 	private TextView txtCity;
+	private ImageView ivProfilePicture;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +52,7 @@ public class ProfileActivity extends Activity {
 	}
 
 	public void init() {
+		ivProfilePicture = (ImageView) findViewById(R.id.iv_profile_picture);
 		txtName = (TextView) findViewById(R.id.txt_name);
 		txtLastname = (TextView) findViewById(R.id.txt_lastname);
 		txtEmail = (TextView) findViewById(R.id.txt_email);
@@ -49,11 +63,9 @@ public class ProfileActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+		if (id == R.id.upload_profile_picture) {
+			profileController.saveProfilePicture();
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
@@ -114,5 +126,14 @@ public class ProfileActivity extends Activity {
 	public void setTxtCity(TextView txtCity) {
 		this.txtCity = txtCity;
 	}
+
+	public ImageView getIvProfilePicture() {
+		return ivProfilePicture;
+	}
+
+	public void setIvProfilePicture(ImageView ivProfilePicture) {
+		this.ivProfilePicture = ivProfilePicture;
+	}
+	
 
 }

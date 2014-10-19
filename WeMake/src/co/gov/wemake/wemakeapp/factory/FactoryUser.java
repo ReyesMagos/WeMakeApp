@@ -1,5 +1,7 @@
 package co.gov.wemake.wemakeapp.factory;
 
+import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseUser;
 
 import co.gov.wemake.wemakeapp.domain.entities.User;
@@ -38,6 +40,22 @@ public class FactoryUser implements IFactoryUser {
 		user.setSkills(parseUser.getString("skills"));
 
 		return user;
+	}
+
+	public byte[] getProfilePictureOfParseUser() {
+		ParseUser user = getCurrentUserInActivity().getParseUser();
+		ParseFile fileObject = (ParseFile) user.get("profilepic");
+		byte[] byteArray;
+		try {
+			byteArray = fileObject.getData();
+			return byteArray;
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+
+		}
+		return null;
+
 	}
 
 	@Override

@@ -1,10 +1,15 @@
 package co.gov.wemake.wemakeapp.activities;
 
+import java.io.ByteArrayOutputStream;
+
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,9 +17,14 @@ import android.widget.EditText;
 import co.gov.wemake.wemakeapp.R;
 import co.gov.wemake.wemakeapp.controller.AbstractController;
 import co.gov.wemake.wemakeapp.controller.LoginController;
+import co.gov.wemake.wemakeapp.factory.FactoryUser;
 import co.gov.wemake.wemakeapp.security.EncryptUtils;
 
 import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 public class LoginActivity extends Activity {
 
@@ -61,22 +71,35 @@ public class LoginActivity extends Activity {
 		return true;
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
+	
+	
 
 	public void buttonLogin_Click(View view) {
 
 		loginController.login(userNameEditText.getText().toString()
 				.toLowerCase(), passwordEditText.getText().toString());
+	}
+
+	@Override
+	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+		// TODO Auto-generated method stub
+
+		return super.onMenuItemSelected(featureId, item);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		Log.i("output", "PERRA2");
+		return super.onOptionsItemSelected(item);
+	}
+	
+
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		Log.i("output", "PERRA3");
+		return super.onContextItemSelected(item);
 	}
 
 	public void singUp(View view) {

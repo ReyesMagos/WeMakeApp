@@ -7,6 +7,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 
 public abstract class AbstractController {
+	
+	
 	private Activity activity;
 	private ProgressDialog progressDialog;
 

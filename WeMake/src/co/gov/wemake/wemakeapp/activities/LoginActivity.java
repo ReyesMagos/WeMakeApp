@@ -1,5 +1,6 @@
 package co.gov.wemake.wemakeapp.activities;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import co.gov.wemake.wemakeapp.R;
+import co.gov.wemake.wemakeapp.controller.AbstractController;
 import co.gov.wemake.wemakeapp.controller.LoginController;
 import co.gov.wemake.wemakeapp.security.EncryptUtils;
 
@@ -21,6 +23,7 @@ public class LoginActivity extends Activity {
 	private LoginController loginController;
 	private String username;
 	private String password;
+	private ActionBar action;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +34,12 @@ public class LoginActivity extends Activity {
 				getString(R.string.parse_key_number));
 		createComponents();
 		loginController = new LoginController(this);
-		SharedPreferences sharedPreferences =PreferenceManager
+		SharedPreferences sharedPreferences = PreferenceManager
 				.getDefaultSharedPreferences(getApplicationContext());
 		username = sharedPreferences.getString("username", "NAN");
 		password = sharedPreferences.getString("password", "NAN");
+		action = getActionBar();
+
 	}
 
 	private void createComponents() {
@@ -43,9 +48,9 @@ public class LoginActivity extends Activity {
 				.findViewById(R.id.txt_username);
 		this.passwordEditText = (EditText) super
 				.findViewById(R.id.txt_password);
-		if (username!=null && !username.equals("NAN"))
+		if (username != null && !username.equals("NAN"))
 			userNameEditText.setText(username);
-		if (password!=null && !password.equals("NAN"))
+		if (password != null && !password.equals("NAN"))
 			passwordEditText.setText(password);
 	}
 

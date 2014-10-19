@@ -15,6 +15,8 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.util.Log;
 
+
+
 public class LoginController extends AbstractController {
 
 	public LoginController(Activity activity) {
@@ -50,6 +52,8 @@ public class LoginController extends AbstractController {
 		}
 		return true;
 	}
+	
+	
 
 	@SuppressLint("NewApi")
 	public boolean verifyPassword(String password) {

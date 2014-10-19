@@ -79,5 +79,9 @@
 
     <!-- String for Profile Activity -->
     <string name="profession_and_skills_label">Profesion/Habilidades</string>
+    <string name="uploading_profile_picture_message">Subiendo Imagen de Perfil por favor espere</string>
+    <string name="profile_picture_upload_success">Imagen de Perfil subida exitosamente</string>
+    <string name="profile_picture_upload_error">Erro al subir Imagen de Perfil</string>
+    <string name="downloading_profile_picture">Descargando imagen de Perfil espere por favor espere</string>
 
 </resources>

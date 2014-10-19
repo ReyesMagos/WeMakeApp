@@ -3,9 +3,10 @@
     tools:context="co.gov.wemake.wemakeapp.ProfileActivity" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/upload_profile_picture"
+        android:icon="@drawable/ic_launcher"
         android:orderInCategory="100"
-        android:showAsAction="never"
+        android:showAsAction="always"
         android:title="@string/action_settings"/>
 
 </menu>

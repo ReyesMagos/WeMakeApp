@@ -212,7 +212,8 @@ public class RegisterController extends AbstractController {
 
 	}
 
-	@SuppressLint("NewApi") public boolean verifyString(int lenght, int messageType, String input) {
+	@SuppressLint("NewApi")
+	public boolean verifyString(int lenght, int messageType, String input) {
 		String lenghtErrorMessage = "";
 		String formatErrorMessage = "";
 
@@ -255,7 +256,8 @@ public class RegisterController extends AbstractController {
 
 	}
 
-	@SuppressLint("NewApi") public boolean verifyString2(int lenght, int messageType, String input) {
+	@SuppressLint("NewApi")
+	public boolean verifyString2(int lenght, int messageType, String input) {
 		String lenghtErrorMessage = "";
 		String formatErrorMessage = "";
 		switch (messageType) {

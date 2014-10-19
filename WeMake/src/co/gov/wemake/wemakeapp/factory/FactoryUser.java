@@ -46,6 +46,8 @@ public class FactoryUser implements IFactoryUser {
 		ParseUser user = getCurrentUserInActivity().getParseUser();
 		ParseFile fileObject = (ParseFile) user.get("profilepic");
 		byte[] byteArray;
+		if (fileObject == null)
+			return null;
 		try {
 			byteArray = fileObject.getData();
 			return byteArray;

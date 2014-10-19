@@ -1,5 +1,6 @@
 package co.gov.wemake.wemakeapp.activities;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ public class LoginActivity extends Activity {
 	private LoginController loginController;
 	private String username;
 	private String password;
+	private ActionBar action;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class LoginActivity extends Activity {
 				.getDefaultSharedPreferences(getApplicationContext());
 		username = sharedPreferences.getString("username", "NAN");
 		password = sharedPreferences.getString("password", "NAN");
+		action = getActionBar();
 
 	}
 

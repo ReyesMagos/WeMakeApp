@@ -2,20 +2,19 @@ package co.gov.wemake.wemakeapp.controller;
 
 import java.io.ByteArrayOutputStream;
 
-import com.parse.ParseException;
-import com.parse.ParseFile;
-import com.parse.ParseUser;
-import com.parse.SaveCallback;
-
-import co.gov.wemake.wemakeapp.R;
-import co.gov.wemake.wemakeapp.activities.LoginActivity;
-import co.gov.wemake.wemakeapp.activities.ProfileActivity;
-import co.gov.wemake.wemakeapp.domain.entities.User;
-import co.gov.wemake.wemakeapp.factory.FactoryUser;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
+import co.gov.wemake.wemakeapp.R;
+import co.gov.wemake.wemakeapp.activities.ProfileActivity;
+import co.gov.wemake.wemakeapp.domain.entities.User;
+import co.gov.wemake.wemakeapp.factory.FactoryUser;
+
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 public class ProfileController extends AbstractController {
 
@@ -41,7 +40,6 @@ public class ProfileController extends AbstractController {
 
 	public void getProfilePicture() {
 
-		
 		byte[] byteArray = FactoryUser.getInstance()
 				.getProfilePictureOfParseUser();
 		if (byteArray != null) {
@@ -50,16 +48,15 @@ public class ProfileController extends AbstractController {
 			ProfileActivity profileActivity = (ProfileActivity) getActivity();
 			profileActivity.getIvProfilePicture().setImageBitmap(bitmap);
 		}
-	
 
 	}
 
-	public void saveProfilePicture() {
+	public void saveProfilePicture(final Bitmap picture) {
 
 		ParseUser user = FactoryUser.getInstance().getCurrentUserInActivity()
 				.getParseUser();
-		Bitmap picture = BitmapFactory.decodeResource(getActivity()
-				.getResources(), R.drawable.yo);
+		// Bitmap picture = BitmapFactory.decodeResource(getActivity()
+		// .getResources(), R.drawable.yo);
 		ByteArrayOutputStream stream = new ByteArrayOutputStream();
 		picture.compress(Bitmap.CompressFormat.JPEG, 100, stream);
 		// get byte array here
@@ -90,6 +87,10 @@ public class ProfileController extends AbstractController {
 										.getResources()
 										.getString(
 												R.string.profile_picture_upload_success));
+						ProfileActivity profileActivity = (ProfileActivity) getActivity();
+						profileActivity.getIvProfilePicture().setImageBitmap(
+								picture);
+
 					} else {
 						showAlertMessage(
 								getActivity().getResources().getString(

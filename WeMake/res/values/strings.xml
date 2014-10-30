@@ -87,5 +87,10 @@
     <string name="edit_information_save_error">Error al Actualizar la Informacion</string>
     <string name="skills_label2">Habilidades:</string>
     <string name="profession_label2">Profesion:</string>
+    <string name="title_activity_time_line">TimeLineActivity</string>
+
+    <!-- String for TimeLineActivity -->
+    <string name="colectivos_activity_label">Colectivos</string>
+    <string name="instituciones_activity_label">Instituciones</string>
 
 </resources>

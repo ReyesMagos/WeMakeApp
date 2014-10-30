@@ -40,8 +40,12 @@
             android:label="@string/title_activity_register" >
         </activity>
         <activity
-            android:name="co.gov.wemake.wemakeapp.activities.ProfileActivity"
+            android:name=".activities.ProfileActivity"
             android:label="@string/title_activity_profile" >
+        </activity>
+        <activity
+            android:name="co.gov.wemake.wemakeapp.activities.TimeLineActivity"
+            android:label="@string/title_activity_time_line" >
         </activity>
     </application>
 

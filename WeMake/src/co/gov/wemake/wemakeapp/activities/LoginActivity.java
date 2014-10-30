@@ -90,7 +90,6 @@ public class LoginActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
-		Log.i("output", "PERRA2");
 		return super.onOptionsItemSelected(item);
 	}
 	
@@ -98,7 +97,7 @@ public class LoginActivity extends Activity {
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
-		Log.i("output", "PERRA3");
+	
 		return super.onContextItemSelected(item);
 	}
 

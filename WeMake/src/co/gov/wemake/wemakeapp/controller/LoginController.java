@@ -5,6 +5,7 @@ import java.lang.annotation.RetentionPolicy;
 
 import co.gov.wemake.wemakeapp.R;
 import co.gov.wemake.wemakeapp.activities.ProfileActivity;
+import co.gov.wemake.wemakeapp.activities.TimeLineActivity;
 import co.gov.wemake.wemakeapp.factory.FactoryUser;
 import co.gov.wemake.wemakeapp.security.EncryptUtils;
 
@@ -107,7 +108,7 @@ public class LoginController extends AbstractController {
 							factoryUser.setUser(factoryUser.createUser(user));
 							if (user.getBoolean("emailVerified")) {
 								Log.i("Login", "success");
-								changeActivity(ProfileActivity.class);
+								changeActivity(TimeLineActivity.class);
 							}
 
 							else

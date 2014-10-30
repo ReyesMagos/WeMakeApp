@@ -2,6 +2,8 @@ package co.gov.wemake.wemakeapp.domain.entities;
 
 import java.util.List;
 
+import android.graphics.Bitmap;
+
 import com.parse.ParseUser;
 
 public class User {
@@ -17,93 +19,86 @@ public class User {
 	private String neighborhood;
 	private String skills;
 	private String profession;
-	
-	
-	public User(ParseUser user){
+	private Bitmap profilePicture;
+
+	public User(ParseUser user) {
 		this.setParseUser(user);
 		this.setEmail(user.getEmail());
 	}
 
-	
 	public String getName() {
 		return name;
 	}
+	
+	
 
+	public Bitmap getProfilePicture() {
+		return profilePicture;
+	}
+
+	public void setProfilePicture(Bitmap profilePicture) {
+		this.profilePicture = profilePicture;
+	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-
 	public String getLastname() {
 		return lastname;
 	}
-
 
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
 
-
 	public String getPhone() {
 		return phone;
 	}
-
 
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
-
 	public String getState() {
 		return state;
 	}
-
 
 	public void setState(String state) {
 		this.state = state;
 	}
 
-
 	public String getCity() {
 		return city;
 	}
-
 
 	public void setCity(String city) {
 		this.city = city;
 	}
 
-
 	public String getNeighborhood() {
 		return neighborhood;
 	}
-
 
 	public void setNeighborhood(String neighborhood) {
 		this.neighborhood = neighborhood;
 	}
 
-
 	public String getSkills() {
 		return skills;
 	}
-
 
 	public void setSkills(String skills) {
 		this.skills = skills;
 	}
 
-
 	public String getProfession() {
 		return profession;
 	}
 
-
 	public void setProfession(String profession) {
 		this.profession = profession;
 	}
-
 
 	public ParseUser getParseUser() {
 		return parseUser;

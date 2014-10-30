@@ -347,11 +347,28 @@ public class RegisterController extends AbstractController {
 					editor.commit();
 					changeActivity(LoginActivity.class);
 				} else {
-					showAlertMessage(
-							getActivity().getResources().getString(
-									R.string.alert_label),
-							getActivity().getResources().getString(
-									R.string.sing_up_error));
+					// code 101 is exception for invalid credentials
+					// code 100 is exeption for network problems
+					if (e.getCode() == 100) {
+						showAlertMessage(
+								getActivity().getResources().getString(
+										R.string.alert_label),
+								getActivity().getResources().getString(
+										R.string.network_problem));
+
+					} else if (e.getCode() == 101) {
+						showAlertMessage(
+								getActivity().getResources().getString(
+										R.string.alert_label),
+								getActivity().getResources().getString(
+										R.string.invalid_login_credentials));
+
+					} else
+						showAlertMessage(
+								getActivity().getResources().getString(
+										R.string.alert_label),
+								getActivity().getResources().getString(
+										R.string.sing_up_error));
 				}
 				dissmissProgressDialog();
 			}

@@ -3,6 +3,7 @@ package co.gov.wemake.wemakeapp.factory;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import co.gov.wemake.wemakeapp.domain.entities.User;
 import co.gov.wemake.wemakeapp.factory.interfaces.IFactoryUser;
@@ -24,6 +25,8 @@ public class FactoryUser implements IFactoryUser {
 		return instance;
 	}
 
+	
+
 	@Override
 	public User createUser(ParseUser parseUser) {
 		// TODO Auto-generated method stub
@@ -40,6 +43,22 @@ public class FactoryUser implements IFactoryUser {
 		user.setSkills(parseUser.getString("skills"));
 
 		return user;
+	}
+	
+	
+	public void updateUser(ParseUser parseUser){
+		
+		this.user.setName(parseUser.getString("name"));
+		this.user.setLastname(parseUser.getString("lastname"));
+		this.user.setEmail(parseUser.getEmail());
+		this.user.setAge(parseUser.getString("age"));
+		this.user.setPhone(parseUser.getString("phone"));
+		this.user.setState(parseUser.getString("state"));
+		this.user.setCity(parseUser.getString("city"));
+		this.user.setNeighborhood("neighborhood");
+		this.user.setProfession(parseUser.getString("profession"));
+		this.user.setSkills(parseUser.getString("skills"));
+		
 	}
 
 	public byte[] getProfilePictureOfParseUser() {

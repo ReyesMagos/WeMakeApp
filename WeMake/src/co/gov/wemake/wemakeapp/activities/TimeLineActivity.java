@@ -5,6 +5,7 @@ import co.gov.wemake.wemakeapp.R.id;
 import co.gov.wemake.wemakeapp.R.layout;
 import co.gov.wemake.wemakeapp.R.menu;
 import co.gov.wemake.wemakeapp.activities.fragments.TimeLineActivityTabsPagesFragment;
+import co.gov.wemake.wemakeapp.controller.TimeLiveController;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
@@ -22,6 +23,7 @@ public class TimeLineActivity extends FragmentActivity implements TabListener {
 	private ActionBar action;
 	private ViewPager pager;
 	private TimeLineActivityTabsPagesFragment tabsAdapter;
+	private TimeLiveController timeLiveController;
 	private String[] tabsNames = { "Colectivos", "Instituciones" }; // it's must
 																	// be load
 																	// dinamycally
@@ -33,6 +35,7 @@ public class TimeLineActivity extends FragmentActivity implements TabListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_time_line);
+		timeLiveController = new TimeLiveController(this);
 		action = getActionBar();
 		pager = (ViewPager) findViewById(R.id.pager);
 		tabsAdapter = new TimeLineActivityTabsPagesFragment(
@@ -44,26 +47,25 @@ public class TimeLineActivity extends FragmentActivity implements TabListener {
 		for (String tab_name : tabsNames) {
 			action.addTab(action.newTab().setText(tab_name)
 					.setTabListener(this));
-			
-			
+
 		}
-		
+
 		pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-			 
-		    @Override
-		    public void onPageSelected(int position) {
-		        // on changing the page
-		        // make respected tab selected
-		        action.setSelectedNavigationItem(position);
-		    }
-		 
-		    @Override
-		    public void onPageScrolled(int arg0, float arg1, int arg2) {
-		    }
-		 
-		    @Override
-		    public void onPageScrollStateChanged(int arg0) {
-		    }
+
+			@Override
+			public void onPageSelected(int position) {
+				// on changing the page
+				// make respected tab selected
+				action.setSelectedNavigationItem(position);
+			}
+
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {
+			}
+
+			@Override
+			public void onPageScrollStateChanged(int arg0) {
+			}
 		});
 
 	}
@@ -81,7 +83,8 @@ public class TimeLineActivity extends FragmentActivity implements TabListener {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+		if (id == R.id.profile_activity_button) {
+			timeLiveController.changeActivity(ProfileActivity.class);
 			return true;
 		}
 		return super.onOptionsItemSelected(item);

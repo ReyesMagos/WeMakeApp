@@ -7,5 +7,11 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/action_settings"/>
+    <item
+        android:id="@+id/profile_activity_button"
+        android:icon="@drawable/ic_launcher"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/profile_activity_button"/>
 
 </menu>

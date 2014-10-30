@@ -92,5 +92,6 @@
     <!-- String for TimeLineActivity -->
     <string name="colectivos_activity_label">Colectivos</string>
     <string name="instituciones_activity_label">Instituciones</string>
+     <string name="profile_activity_button">Perfil</string>
 
 </resources>
